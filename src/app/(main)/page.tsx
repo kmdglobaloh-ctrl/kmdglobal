@@ -3,26 +3,26 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
-import { ArrowRight, Brain, Cpu, Globe, Zap, ChevronRight } from "lucide-react";
+import { ArrowRight, Globe, Zap, BookOpen, ChevronRight, MessageSquare } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "KMD Global | AI Innovation Company",
+  title: "KMD Global | AI Products",
   description:
-    "KMD Global builds AI-powered software products that transform industries. We create intelligent systems that automate complex workflows, surface deep insights, and help businesses scale.",
+    "KMD Global builds AI-powered software products. Our first product is Spanish Training — learn practical Spanish for travel through AI-powered conversation practice.",
   alternates: { canonical: "/" },
 };
 
 const products = [
   {
-    href: "/longevity",
+    href: "/spanish-training",
     badge: "Live",
     badgeVariant: "default" as const,
-    icon: Brain,
-    name: "Longevity AI",
-    tagline: "AI Automation for Anti-Aging & Longevity Clinics",
+    icon: Globe,
+    name: "Spanish Training",
+    tagline: "Learn Spanish for Real Travel — AI Conversation Practice",
     description:
-      "Automates biomarker interpretation, personalized protocols, patient onboarding, and progress tracking for longevity and functional medicine practices.",
-    cta: "Explore Longevity AI",
+      "Learn practical Spanish for Central America and the Caribbean coast. Region-specific dialects, local slang, real-world scenarios like restaurants and tuk-tuks, and AI conversation practice with instant grammar feedback.",
+    cta: "Start Learning",
     accent: "text-primary",
     accentBg: "bg-primary/10 dark:bg-primary/15",
   },
@@ -30,60 +30,41 @@ const products = [
     href: "#",
     badge: "Coming Soon",
     badgeVariant: "secondary" as const,
-    icon: Cpu,
-    name: "Enterprise AI Platform",
-    tagline: "Intelligent Workflow Automation for Operations Teams",
+    icon: MessageSquare,
+    name: "More Products",
+    tagline: "More AI-powered tools in development",
     description:
-      "A horizontal AI platform that connects your data, automates repetitive decision-making, and delivers insights across finance, HR, and supply chain.",
-    cta: "Join Waitlist",
-    accent: "text-accent",
-    accentBg: "bg-accent/10 dark:bg-accent/15",
+      "We're building more focused AI tools across education, productivity, and beyond. Join the waitlist to be notified when they launch.",
+    cta: "Coming Soon",
+    accent: "text-muted-foreground",
+    accentBg: "bg-muted/50",
   },
 ];
 
 const pillars = [
   {
-    icon: Brain,
-    title: "AI-Native by Design",
+    icon: BookOpen,
+    title: "Learn by Doing",
     description:
-      "Every product we build puts AI at the core — not as a bolt-on feature, but as the fundamental architecture that makes each system smarter over time.",
+      "Every product is built around active practice — not passive reading. Our Spanish Training app puts you in real conversations from day one.",
   },
   {
     icon: Globe,
-    title: "Vertical Depth",
+    title: "Local & Specific",
     description:
-      "We go deep into specific industries to build AI that understands domain context, clinical nuance, and operational reality — not generic tools.",
+      "We go deep into context. Spanish Training isn't generic — it's built for specific regions, dialects, and real situations you'll actually face.",
   },
   {
     icon: Zap,
-    title: "Measurable Impact",
+    title: "AI-Powered Feedback",
     description:
-      "We don't ship features. We ship outcomes. Every product is built around a clear value metric: time saved, revenue generated, quality improved.",
+      "Instant corrections with clear explanations. Every mistake becomes a lesson, and every correct answer gets reinforced — automatically.",
   },
 ];
 
 export default function HomePage() {
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    name: "KMD Global",
-    url: "https://kmdglobal.ai",
-    description:
-      "AI innovation company building intelligent software products that transform industries.",
-    contactPoint: {
-      "@type": "ContactPoint",
-      contactType: "customer service",
-      email: "hello@kmdglobal.ai",
-    },
-  };
-
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
-
       {/* Hero */}
       <section className="relative overflow-hidden bg-gradient-to-b from-primary/5 dark:from-primary/15 via-background to-background py-24 sm:py-36">
         <div className="absolute inset-0 -z-10">
@@ -93,18 +74,18 @@ export default function HomePage() {
         <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
             <Badge variant="secondary" className="mb-6">
-              Tech Innovation
+              AI-Powered Learning
             </Badge>
             <h1 className="text-5xl font-bold tracking-tight text-foreground sm:text-6xl lg:text-7xl leading-tight">
-              We Build AI That{" "}
-              <span className="text-primary">Changes Industries</span>
+              AI Tools That{" "}
+              <span className="text-primary">Actually Help</span>
             </h1>
             <p className="mt-6 text-xl text-muted-foreground leading-relaxed max-w-2xl">
-              KMD Global is a technology company focused on building AI-native software products that automate complex workflows, surface deep insights, and help businesses scale without limits.
+              KMD Global builds focused AI products for real-world use. Our first: a Spanish language trainer built for travelers — with local slang, AI conversation practice, and instant feedback.
             </p>
             <div className="mt-10 flex flex-col gap-3 sm:flex-row">
-              <Button size="lg" nativeButton={false} render={<Link href="/longevity" />} className="gap-2">
-                See Our Products
+              <Button size="lg" nativeButton={false} render={<Link href="/spanish-training" />} className="gap-2">
+                Try Spanish Training
                 <ArrowRight className="h-4 w-4" />
               </Button>
               <Button size="lg" variant="outline" nativeButton={false} render={<Link href="/contact" />}>
@@ -121,10 +102,10 @@ export default function HomePage() {
           <div className="mb-14">
             <Badge variant="secondary" className="mb-4">Our Products</Badge>
             <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-              AI Built for the Industries That Matter
+              Focused Tools. Real Results.
             </h2>
             <p className="mt-3 max-w-xl text-muted-foreground">
-              Each product is a focused, vertical AI system — purpose-built for a specific industry with deep domain knowledge baked in.
+              Each product is built for a specific purpose — no bloat, no generic features. Just the thing you need, done well.
             </p>
           </div>
 
@@ -180,7 +161,7 @@ export default function HomePage() {
               How We Build
             </h2>
             <p className="mt-3 max-w-xl mx-auto text-muted-foreground">
-              Three principles that drive every product decision at KMD Global.
+              Three principles behind every product we ship.
             </p>
           </div>
           <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
@@ -200,7 +181,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Company CTA */}
+      {/* CTA */}
       <section className="py-20 sm:py-28">
         <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="relative overflow-hidden rounded-2xl bg-primary px-8 py-16 sm:px-16">
@@ -210,20 +191,20 @@ export default function HomePage() {
             </div>
             <div className="max-w-2xl">
               <h2 className="text-3xl font-bold text-primary-foreground sm:text-4xl">
-                Building Something That Could Use AI?
+                Ready to Learn Spanish?
               </h2>
               <p className="mt-4 text-lg text-primary-foreground/80">
-                We work with select partners and enterprises to build custom AI solutions. If you have a problem that deserves an intelligent system, let&apos;s talk.
+                Start with Chapter 1 — greetings and basics — and work your way through real conversations with an AI local. No account needed.
               </p>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                 <Button
                   size="lg"
                   variant="secondary"
                   nativeButton={false}
-                  render={<Link href="/contact" />}
+                  render={<Link href="/spanish-training" />}
                   className="gap-2 font-semibold"
                 >
-                  Start a Conversation
+                  Start Learning Free
                   <ArrowRight className="h-4 w-4" />
                 </Button>
               </div>

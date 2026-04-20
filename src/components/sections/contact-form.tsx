@@ -13,7 +13,7 @@ import { CheckCircle2 } from "lucide-react";
 const schema = z.object({
   name: z.string().min(2, "Name is required"),
   email: z.string().email("Please enter a valid email"),
-  clinic: z.string().min(2, "Clinic name is required"),
+  company: z.string().optional(),
   message: z.string().min(10, "Message must be at least 10 characters"),
 });
 
@@ -52,14 +52,14 @@ export function ContactForm() {
       <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
         <div className="flex flex-col gap-2">
           <Label htmlFor="name">Name</Label>
-          <Input id="name" placeholder="Dr. Jane Smith" {...register("name")} />
+          <Input id="name" placeholder="Jane Smith" {...register("name")} />
           {errors.name && (
             <p className="text-xs text-destructive">{errors.name.message}</p>
           )}
         </div>
         <div className="flex flex-col gap-2">
           <Label htmlFor="email">Email</Label>
-          <Input id="email" type="email" placeholder="jane@myclinic.com" {...register("email")} />
+          <Input id="email" type="email" placeholder="jane@example.com" {...register("email")} />
           {errors.email && (
             <p className="text-xs text-destructive">{errors.email.message}</p>
           )}
@@ -67,11 +67,8 @@ export function ContactForm() {
       </div>
 
       <div className="flex flex-col gap-2">
-        <Label htmlFor="clinic">Clinic Name</Label>
-        <Input id="clinic" placeholder="Apex Longevity Center" {...register("clinic")} />
-        {errors.clinic && (
-          <p className="text-xs text-destructive">{errors.clinic.message}</p>
-        )}
+        <Label htmlFor="company">Company / Organization (optional)</Label>
+        <Input id="company" placeholder="Acme Corp" {...register("company")} />
       </div>
 
       <div className="flex flex-col gap-2">
@@ -79,7 +76,7 @@ export function ContactForm() {
         <Textarea
           id="message"
           rows={5}
-          placeholder="Tell us about your clinic and what you're looking to automate..."
+          placeholder="Tell us what you're working on or what you'd like to discuss..."
           {...register("message")}
         />
         {errors.message && (

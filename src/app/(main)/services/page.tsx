@@ -1,193 +1,149 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
-import { CtaBanner } from "@/components/sections/cta-banner";
-import {
-  FlaskConical,
-  ClipboardList,
-  CalendarCheck,
-  TrendingUp,
-  FileText,
-  Zap,
-  CheckCircle2,
-} from "lucide-react";
+import { ArrowRight, MessageSquare, Globe, BookOpen, Zap, Map, CheckCircle2 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Services — AI Automation for Longevity Clinics",
+  title: "Features — Spanish Training",
   description:
-    "Explore KMD Global's full suite of AI automation tools: biomarker interpretation, protocol generation, patient onboarding, outcome tracking, and content marketing.",
+    "Explore what makes Spanish Training different: region-specific dialects, real-world scenarios, AI conversation practice, instant grammar feedback, and pronunciation tools.",
   alternates: { canonical: "/services" },
 };
 
-const services = [
+const features = [
   {
-    id: "biomarkers",
-    icon: FlaskConical,
-    title: "Biomarker Interpretation",
-    subtitle: "From raw labs to actionable insights in seconds",
+    id: "dialects",
+    icon: Globe,
+    title: "Region-Specific Dialects",
+    subtitle: "Learn the Spanish people actually speak where you're going",
     description:
-      "Our AI engine analyzes comprehensive panels — hormones, metabolic markers, micronutrients, inflammatory markers, and more — cross-referencing each value against clinical evidence to surface the most impactful optimization opportunities for each patient.",
+      "Generic Spanish courses teach you Castilian Spanish or textbook Latin American. Spanish Training is built around specific regions — Caribbean Costa Rica, General Central American — with the local slang, idioms, and expressions you'll actually hear.",
     capabilities: [
-      "Comprehensive lab panel analysis (100+ biomarkers)",
-      "Functional reference range interpretation",
-      "Ranked intervention recommendations by impact",
-      "Patient-friendly plain-language summaries",
-      "Clinician-facing detailed clinical rationale",
-      "Trend analysis across multiple lab draws",
+      "Caribbean Costa Rica dialect (Cocles, Puerto Viejo, Cahuita)",
+      "General Central American Spanish",
+      "Local slang and idioms, not just textbook phrases",
+      "Regional vocabulary differences explained",
+      "Cultural context alongside language",
+      "More regions being added continuously",
     ],
     color: "text-primary",
-    bg: "bg-primary/10",
+    bg: "bg-primary/10 dark:bg-primary/15",
   },
   {
-    id: "protocols",
-    icon: ClipboardList,
-    title: "Personalized Protocol Generation",
-    subtitle: "Evidence-based, individualized, instantly delivered",
+    id: "scenarios",
+    icon: Map,
+    title: "Real-World Scenarios",
+    subtitle: "Practice conversations you'll actually have",
     description:
-      "KMD Global generates fully personalized protocols for each patient — covering nutrition, targeted supplementation, exercise prescriptions, and peptide recommendations — all based on their unique biomarker picture, health history, and stated goals.",
+      "Every chapter is built around situations you'll face as a traveler — ordering food, taking a tuk-tuk, asking for directions, shopping at markets, checking into accommodation. No abstract grammar drills; just the language you need.",
     capabilities: [
-      "Personalized nutrition plans with macro targets",
-      "Targeted supplement stacks with dosing",
-      "Exercise prescriptions by phase and ability",
-      "Peptide protocol recommendations",
-      "HRT and hormone optimization guidance",
-      "Automatic protocol updates as labs change",
+      "Restaurants and food ordering",
+      "Transportation (tuk-tuks, buses, taxis)",
+      "Accommodation and hotels",
+      "Markets and shopping",
+      "Asking for directions",
+      "Social greetings and small talk",
     ],
     color: "text-accent",
     bg: "bg-accent/10",
   },
   {
-    id: "onboarding",
-    icon: CalendarCheck,
-    title: "Patient Intake & Onboarding",
-    subtitle: "A frictionless first experience for every new patient",
+    id: "conversation",
+    icon: MessageSquare,
+    title: "AI Conversation Practice",
+    subtitle: "Talk to an AI local — anytime, as many times as you want",
     description:
-      "Automate every step of the patient journey from initial inquiry to first consultation — intake forms, health history, goal-setting, consent, and pre-visit education — so your team walks into every appointment fully prepared.",
+      "Each chapter ends with a conversation test where you chat with an AI character playing a local. They stay in character, respond naturally, and correct your Spanish as you go — giving you the reps you need without the awkwardness of practicing with a real person.",
     capabilities: [
-      "Automated intake form collection and analysis",
-      "AI-powered health history summarization",
-      "Goal-setting questionnaire and risk stratification",
-      "Pre-visit preparation checklists",
-      "Consent and policy document management",
-      "Welcome sequences and pre-education delivery",
+      "AI character stays in-scenario the whole conversation",
+      "Responds naturally to what you actually say",
+      "Corrects grammar and vocabulary mistakes inline",
+      "Explains why corrections were made",
+      "No judgment — make mistakes freely",
+      "Replay as many times as you want",
     ],
     color: "text-primary",
-    bg: "bg-primary/10",
+    bg: "bg-primary/10 dark:bg-primary/15",
   },
   {
-    id: "tracking",
-    icon: TrendingUp,
-    title: "Progress & Biological Age Tracking",
-    subtitle: "Make outcomes visible — and keep patients coming back",
-    description:
-      "Show patients their progress in clear, compelling ways. Track biological age, biomarker trajectories, body composition, and protocol adherence over time with automated reports that make the value of your program undeniable.",
-    capabilities: [
-      "Biological age calculation and trend tracking",
-      "Lab value trend visualization",
-      "Body composition monitoring integration",
-      "Protocol adherence tracking",
-      "Automated progress reports for patients",
-      "Clinical outcome dashboards for providers",
-    ],
-    color: "text-accent",
-    bg: "bg-accent/10",
-  },
-  {
-    id: "content",
-    icon: FileText,
-    title: "Clinic Content Generation",
-    subtitle: "Stay top-of-mind without the content burden",
-    description:
-      "Generate a consistent stream of high-quality, on-brand content — educational emails, social media posts, patient follow-up messages, and blog articles — all tailored to your patient segments and clinic voice.",
-    capabilities: [
-      "Email campaign generation by patient segment",
-      "Social media content calendar",
-      "Educational blog article drafts",
-      "Patient follow-up message sequences",
-      "Re-engagement campaigns for inactive patients",
-      "Lab result explanation content",
-    ],
-    color: "text-primary",
-    bg: "bg-primary/10",
-  },
-  {
-    id: "automation",
+    id: "feedback",
     icon: Zap,
-    title: "Workflow Automation",
-    subtitle: "Connect your existing tools and eliminate manual work",
+    title: "Instant Grammar Feedback",
+    subtitle: "Every mistake becomes a lesson",
     description:
-      "KMD Global integrates with your EHR, lab ordering, scheduling, and billing platforms to create seamless automated workflows — from lab result routing to follow-up scheduling to billing triggers.",
+      "When you get something right or wrong, the AI tells you immediately — with a clear explanation, not just a check or an X. You see exactly what you got right, what needs fixing, and why. Over time, patterns emerge and your Spanish improves.",
     capabilities: [
-      "EHR integration (major platforms supported)",
-      "Lab ordering platform connections",
-      "Automated follow-up scheduling",
-      "Lab result routing and notifications",
-      "Billing trigger automation",
-      "Custom workflow builder",
+      "✓ marks for correct usage",
+      "✗ marks with corrections and explanations",
+      "Verb tense and conjugation guidance",
+      "Vocabulary alternatives suggested",
+      "Encouragement built into the feedback style",
+      "Feedback calibrated to your current level",
     ],
     color: "text-accent",
     bg: "bg-accent/10",
+  },
+  {
+    id: "pronunciation",
+    icon: BookOpen,
+    title: "Pronunciation Tools",
+    subtitle: "Hear how words actually sound before you say them",
+    description:
+      "Every vocabulary item and phrase has a pronunciation play button. Adjust the speed from very slow to normal so you can catch every syllable before trying it yourself. Uses your browser's built-in speech synthesis — no extra apps or accounts required.",
+    capabilities: [
+      "One-tap pronunciation for every phrase",
+      "Adjustable speed (very slow to normal)",
+      "Preferred Spanish voice selection",
+      "Punctuation stripped for clean audio",
+      "Works on mobile and desktop",
+      "No account or download required",
+    ],
+    color: "text-primary",
+    bg: "bg-primary/10 dark:bg-primary/15",
   },
 ];
 
 export default function ServicesPage() {
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    serviceType: "AI Automation for Longevity Clinics",
-    provider: {
-      "@type": "Organization",
-      name: "KMD Global",
-    },
-    description:
-      "Comprehensive AI automation platform for anti-aging and longevity medical practices.",
-  };
-
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
-
       {/* Header */}
-      <section className="py-20 sm:py-28 bg-gradient-to-b from-primary/5 to-background">
+      <section className="py-20 sm:py-28 bg-gradient-to-b from-primary/5 dark:from-primary/15 to-background">
         <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
-          <Badge variant="secondary" className="mb-4">Services</Badge>
+          <Badge variant="secondary" className="mb-4">Features</Badge>
           <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl">
-            The Complete AI Stack for<br className="hidden sm:block" /> Longevity Clinics
+            What Makes Spanish Training Different
           </h1>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
-            Every tool you need to automate clinical operations, personalize patient care, and scale your practice — built specifically for functional medicine and longevity.
+            Built for travelers, not classrooms. Region-specific, AI-powered, and designed to get you speaking in real situations fast.
           </p>
         </div>
       </section>
 
-      {/* Services */}
+      {/* Features */}
       <section className="py-12 sm:py-20">
         <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col gap-16">
-            {services.map((service, index) => {
-              const Icon = service.icon;
+            {features.map((feature, index) => {
+              const Icon = feature.icon;
               return (
                 <div
-                  key={service.id}
-                  id={service.id}
+                  key={feature.id}
+                  id={feature.id}
                   className={`flex flex-col gap-8 lg:flex-row lg:gap-16 ${
                     index % 2 === 1 ? "lg:flex-row-reverse" : ""
                   }`}
                 >
-                  {/* Content */}
                   <div className="flex-1">
-                    <div className={`inline-flex h-12 w-12 items-center justify-center rounded-xl ${service.bg} mb-4`}>
-                      <Icon className={`h-6 w-6 ${service.color}`} />
+                    <div className={`inline-flex h-12 w-12 items-center justify-center rounded-xl ${feature.bg} mb-4`}>
+                      <Icon className={`h-6 w-6 ${feature.color}`} />
                     </div>
-                    <h2 className="text-2xl font-bold text-foreground sm:text-3xl">{service.title}</h2>
-                    <p className="mt-1 text-base font-medium text-muted-foreground">{service.subtitle}</p>
-                    <p className="mt-4 text-muted-foreground leading-relaxed">{service.description}</p>
+                    <h2 className="text-2xl font-bold text-foreground sm:text-3xl">{feature.title}</h2>
+                    <p className="mt-1 text-base font-medium text-muted-foreground">{feature.subtitle}</p>
+                    <p className="mt-4 text-muted-foreground leading-relaxed">{feature.description}</p>
                   </div>
 
-                  {/* Capabilities card */}
                   <div className="flex-1">
                     <Card className="border-border/60 h-full">
                       <CardHeader className="pb-3">
@@ -195,9 +151,9 @@ export default function ServicesPage() {
                       </CardHeader>
                       <CardContent>
                         <ul className="flex flex-col gap-3">
-                          {service.capabilities.map((cap) => (
+                          {feature.capabilities.map((cap) => (
                             <li key={cap} className="flex items-start gap-2 text-sm text-muted-foreground">
-                              <CheckCircle2 className={`h-4 w-4 mt-0.5 shrink-0 ${service.color}`} />
+                              <CheckCircle2 className={`h-4 w-4 mt-0.5 shrink-0 ${feature.color}`} />
                               {cap}
                             </li>
                           ))}
@@ -212,7 +168,35 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      <CtaBanner />
+      {/* CTA */}
+      <section className="py-20 sm:py-28">
+        <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="relative overflow-hidden rounded-2xl bg-primary px-8 py-16 text-center sm:px-16">
+            <div className="absolute inset-0 -z-10">
+              <div className="absolute top-0 right-0 h-64 w-64 rounded-full bg-white/5 blur-3xl" />
+              <div className="absolute bottom-0 left-0 h-64 w-64 rounded-full bg-white/5 blur-3xl" />
+            </div>
+            <h2 className="text-3xl font-bold text-primary-foreground sm:text-4xl">
+              Ready to Start?
+            </h2>
+            <p className="mx-auto mt-4 max-w-xl text-lg text-primary-foreground/80">
+              No account required. Start with Chapter 1 and have your first AI conversation in minutes.
+            </p>
+            <div className="mt-8">
+              <Button
+                size="lg"
+                variant="secondary"
+                nativeButton={false}
+                render={<Link href="/spanish-training" />}
+                className="gap-2 font-semibold"
+              >
+                Start Learning Free
+                <ArrowRight className="h-4 w-4" />
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
     </>
   );
 }

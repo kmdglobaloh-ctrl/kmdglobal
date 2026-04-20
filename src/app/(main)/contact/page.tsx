@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Badge } from "@/components/ui/badge";
 import { ContactForm } from "@/components/sections/contact-form";
-import { Mail, Rocket } from "lucide-react";
+import { Mail } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Contact KMD Global",
@@ -41,20 +41,6 @@ export default function ContactPage() {
                   <div>
                     <p className="font-medium text-foreground">Email</p>
                     <p className="text-muted-foreground">hello@kmdglobal.ai</p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-4">
-                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-primary/10 dark:bg-primary/15">
-                    <Rocket className="h-5 w-5 text-primary" />
-                  </div>
-                  <div>
-                    <p className="font-medium text-foreground">Longevity AI Product</p>
-                    <p className="text-muted-foreground">
-                      Looking for a demo of our longevity clinic AI?{" "}
-                      <a href="/longevity/demo" className="text-primary hover:underline">
-                        Book a free demo here.
-                      </a>
-                    </p>
                   </div>
                 </div>
               </div>

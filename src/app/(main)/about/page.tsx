@@ -1,33 +1,34 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { Badge } from "@/components/ui/badge";
-import { CtaBanner } from "@/components/sections/cta-banner";
-import { Target, Eye, Heart } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { ArrowRight, Target, Zap, Globe } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "About KMD Global — AI for Longevity Clinics",
+  title: "About KMD Global",
   description:
-    "KMD Global was founded to give longevity and functional medicine clinics the AI infrastructure to scale patient care without sacrificing personalization.",
+    "KMD Global builds focused AI-powered software products for real-world use. Learn about who we are and what we're building.",
   alternates: { canonical: "/about" },
 };
 
 const values = [
   {
     icon: Target,
-    title: "Precision Over Volume",
+    title: "Focused Over Broad",
     description:
-      "We believe the future of healthcare is deeply personalized. Every patient is unique, and their care should reflect that — not generic recommendations, but specific, evidence-driven protocols built for them.",
+      "We don't build general-purpose tools. Every product we ship is built for a specific use case, a specific user, and a specific problem. We'd rather do one thing extremely well than ten things adequately.",
   },
   {
-    icon: Eye,
-    title: "Transparency in AI",
+    icon: Globe,
+    title: "Real-World Utility",
     description:
-      "Our AI doesn't black-box its reasoning. Every recommendation comes with clinical rationale so clinicians can trust, verify, and customize what the AI produces. You stay in control.",
+      "Our products are designed for situations you'll actually face — not abstract exercises. Spanish Training exists because we believe the best way to learn a language is through real conversations in real contexts.",
   },
   {
-    icon: Heart,
-    title: "Built for Clinicians",
+    icon: Zap,
+    title: "AI as the Engine",
     description:
-      "We built KMD Global alongside practicing longevity physicians. Every feature exists to reduce clinical burden, not add to it. If it doesn't save time or improve outcomes, it doesn't ship.",
+      "We use AI to do what it does best: give instant, personalized feedback at scale. Every product we build uses AI to make the experience better than anything a static tool could offer.",
   },
 ];
 
@@ -35,18 +36,18 @@ export default function AboutPage() {
   return (
     <>
       {/* Header */}
-      <section className="py-20 sm:py-28 bg-gradient-to-b from-primary/5 to-background">
+      <section className="py-20 sm:py-28 bg-gradient-to-b from-primary/5 dark:from-primary/15 to-background">
         <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
             <Badge variant="secondary" className="mb-4">About Us</Badge>
             <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl">
-              We Built the AI We Wished Longevity Clinics Had
+              We Build AI Tools That Actually Get Used
             </h1>
             <p className="mt-6 text-lg text-muted-foreground leading-relaxed">
-              KMD Global was founded by a team of physicians, clinical data scientists, and healthcare technologists who saw the same problem everywhere: exceptional longevity clinics were being held back by manual, time-intensive clinical processes that limited their ability to scale without sacrificing quality.
+              KMD Global is a small team building focused AI-powered software products. We&apos;re not trying to build everything — we&apos;re trying to build the right things, done well.
             </p>
             <p className="mt-4 text-lg text-muted-foreground leading-relaxed">
-              We built the platform we wished existed — an AI system that could do the interpretive and administrative heavy lifting, freeing clinicians to do what they do best: think critically, build relationships, and change patients&apos; lives.
+              Our first product is Spanish Training — a language learning app built specifically for travelers heading to Central America and the Caribbean coast. Region-specific slang, real-world scenarios, and AI conversation practice with instant feedback.
             </p>
           </div>
         </div>
@@ -58,31 +59,37 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-20 items-center">
             <div>
               <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-                Our Mission
+                Our Approach
               </h2>
               <p className="mt-4 text-muted-foreground leading-relaxed">
-                To accelerate the adoption of personalized longevity medicine by giving clinics the AI infrastructure to deliver exceptional, individualized care at scale — without burning out their teams or compromising clinical quality.
+                We identify specific problems where AI can make a meaningful difference — and we build tight, polished tools around those problems. No bloat. No feature creep. Just the thing you need, done well.
               </p>
               <p className="mt-4 text-muted-foreground leading-relaxed">
-                We envision a world where every patient who walks into a longevity clinic receives a protocol as personalized as their DNA, delivered in minutes, and tracked with the rigor of a clinical trial.
+                Every product is built around active use, not passive consumption. You learn Spanish by having conversations, not by watching videos. You get better by making mistakes and understanding why — automatically, in real time.
               </p>
+              <div className="mt-8">
+                <Button nativeButton={false} render={<Link href="/spanish-training" />} className="gap-2">
+                  Try Spanish Training
+                  <ArrowRight className="h-4 w-4" />
+                </Button>
+              </div>
             </div>
-            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+            <div className="grid grid-cols-2 gap-4">
               <div className="rounded-xl bg-primary/5 p-6 border border-primary/10">
-                <div className="text-3xl font-bold text-primary">10x</div>
-                <div className="mt-1 text-sm text-muted-foreground">Faster protocol generation vs. manual</div>
+                <div className="text-3xl font-bold text-primary">1</div>
+                <div className="mt-1 text-sm text-muted-foreground">Live product, ready to use</div>
               </div>
               <div className="rounded-xl bg-accent/5 p-6 border border-accent/10">
-                <div className="text-3xl font-bold text-accent">100+</div>
-                <div className="mt-1 text-sm text-muted-foreground">Biomarkers analyzed per patient</div>
+                <div className="text-3xl font-bold text-accent">Free</div>
+                <div className="mt-1 text-sm text-muted-foreground">No account required to start</div>
               </div>
               <div className="rounded-xl bg-accent/5 p-6 border border-accent/10">
-                <div className="text-3xl font-bold text-accent">94%</div>
-                <div className="mt-1 text-sm text-muted-foreground">Patient retention rate reported</div>
+                <div className="text-3xl font-bold text-accent">AI</div>
+                <div className="mt-1 text-sm text-muted-foreground">Powered conversation practice</div>
               </div>
               <div className="rounded-xl bg-primary/5 p-6 border border-primary/10">
-                <div className="text-3xl font-bold text-primary">0 hr</div>
-                <div className="mt-1 text-sm text-muted-foreground">Manual protocol writing with KMD</div>
+                <div className="text-3xl font-bold text-primary">2+</div>
+                <div className="mt-1 text-sm text-muted-foreground">Regional dialects covered</div>
               </div>
             </div>
           </div>
@@ -90,7 +97,7 @@ export default function AboutPage() {
       </section>
 
       {/* Values */}
-      <section className="py-16 sm:py-20 bg-muted/30">
+      <section className="py-16 sm:py-20 bg-muted/30 dark:bg-white/[0.03]">
         <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
@@ -102,7 +109,7 @@ export default function AboutPage() {
               const Icon = value.icon;
               return (
                 <div key={value.title} className="flex flex-col gap-4">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 dark:bg-primary/15">
                     <Icon className="h-6 w-6 text-primary" />
                   </div>
                   <h3 className="text-lg font-semibold text-foreground">{value.title}</h3>
@@ -114,7 +121,44 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <CtaBanner />
+      {/* CTA */}
+      <section className="py-20 sm:py-28">
+        <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="relative overflow-hidden rounded-2xl bg-primary px-8 py-16 text-center sm:px-16">
+            <div className="absolute inset-0 -z-10">
+              <div className="absolute top-0 right-0 h-64 w-64 rounded-full bg-white/5 blur-3xl" />
+              <div className="absolute bottom-0 left-0 h-64 w-64 rounded-full bg-white/5 blur-3xl" />
+            </div>
+            <h2 className="text-3xl font-bold text-primary-foreground sm:text-4xl">
+              Ready to Try It?
+            </h2>
+            <p className="mx-auto mt-4 max-w-xl text-lg text-primary-foreground/80">
+              Spanish Training is free to start — no account needed. Jump in and have your first AI conversation in minutes.
+            </p>
+            <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
+              <Button
+                size="lg"
+                variant="secondary"
+                nativeButton={false}
+                render={<Link href="/spanish-training" />}
+                className="gap-2 font-semibold"
+              >
+                Start Learning Free
+                <ArrowRight className="h-4 w-4" />
+              </Button>
+              <Button
+                size="lg"
+                variant="ghost"
+                nativeButton={false}
+                render={<Link href="/contact" />}
+                className="text-primary-foreground hover:bg-white/10 hover:text-primary-foreground"
+              >
+                Get in Touch
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
     </>
   );
 }

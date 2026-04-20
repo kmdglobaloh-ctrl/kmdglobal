@@ -5,66 +5,66 @@ import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { ArrowRight } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Blog — Longevity Clinic AI Insights",
+  title: "Blog — Spanish Learning & AI Tools",
   description:
-    "Expert insights on AI automation, biomarker optimization, and scaling longevity medical practices. Written for longevity clinic owners and physicians.",
+    "Tips, guides, and insights on learning Spanish for travel, AI-powered language learning, and regional dialects of Central America and the Caribbean coast.",
   alternates: { canonical: "/blog" },
 };
 
 const posts = [
   {
-    slug: "biomarker-interpretation-ai-longevity",
-    title: "How AI Biomarker Interpretation Is Changing Longevity Medicine",
+    slug: "learn-spanish-caribbean-coast",
+    title: "What Makes Caribbean Coast Spanish Different (And Why It Matters for Travelers)",
     excerpt:
-      "Manual lab interpretation used to take 45+ minutes per patient. AI is changing that — and changing the quality of recommendations along the way.",
-    date: "2026-03-15",
-    category: "AI & Technology",
-    readTime: "7 min read",
-  },
-  {
-    slug: "peptide-protocol-automation",
-    title: "Automating Peptide Protocol Generation: What Clinics Need to Know",
-    excerpt:
-      "Peptide therapy is one of the fastest-growing areas in longevity medicine. Here's how AI is helping clinics prescribe with precision and consistency.",
-    date: "2026-03-08",
-    category: "Protocols",
-    readTime: "9 min read",
-  },
-  {
-    slug: "biological-age-tracking-outcomes",
-    title: "Biological Age Tracking: The Metric That Makes Patients Stay",
-    excerpt:
-      "Practices that show patients their biological age trajectory see dramatically higher retention. Here's the science and the strategy.",
-    date: "2026-03-01",
-    category: "Patient Outcomes",
+      "The Spanish spoken in Puerto Viejo and Cocles is a world away from what you learned in school. Here's what to expect and how to prepare.",
+    date: "2026-04-10",
+    category: "Regional Dialects",
     readTime: "6 min read",
   },
   {
-    slug: "scaling-cash-pay-longevity-practice",
-    title: "How to Scale a Cash-Pay Longevity Practice Without Burning Out Your Team",
+    slug: "ai-conversation-practice-language-learning",
+    title: "Why AI Conversation Practice Is the Fastest Way to Learn a Language",
     excerpt:
-      "The bottleneck for most high-revenue longevity clinics isn't demand — it's clinical capacity. AI automation is the unlock.",
-    date: "2026-02-22",
-    category: "Practice Growth",
+      "Reps matter more than anything in language learning. AI lets you get hundreds of reps — with instant corrections — without the embarrassment of practicing on real people.",
+    date: "2026-04-03",
+    category: "AI & Learning",
     readTime: "8 min read",
   },
   {
-    slug: "functional-medicine-ai-integration",
-    title: "Integrating AI Into a Functional Medicine Practice: A Practical Guide",
+    slug: "travel-spanish-phrases-central-america",
+    title: "20 Spanish Phrases Every Traveler to Central America Needs",
     excerpt:
-      "Not all AI tools are built for functional medicine. This guide covers what to look for, what to avoid, and how to onboard your team.",
-    date: "2026-02-14",
-    category: "Guides",
-    readTime: "11 min read",
+      "Forget \"¿Dónde está la biblioteca?\" — here are the phrases that actually come up when you're ordering food, catching a tuk-tuk, and navigating a market.",
+    date: "2026-03-27",
+    category: "Travel Spanish",
+    readTime: "5 min read",
   },
   {
-    slug: "patient-onboarding-automation-longevity",
-    title: "The Longevity Clinic Onboarding System That Converts 3x Better",
+    slug: "spanish-slang-costa-rica",
+    title: "Costa Rican Slang: A Guide to Talking Like a Tico",
     excerpt:
-      "First impressions determine whether patients invest in long-term programs. Here's how automated onboarding creates immediate perceived value.",
-    date: "2026-02-07",
-    category: "Patient Experience",
+      "\"Tuanis,\" \"mae,\" \"pura vida\" — Costa Rica has its own vocabulary that'll confuse you if you're not prepared. Here's a primer on the most common terms.",
+    date: "2026-03-20",
+    category: "Slang & Culture",
     readTime: "7 min read",
+  },
+  {
+    slug: "how-to-practice-spanish-before-travel",
+    title: "How to Practice Spanish Before a Trip (Without Boring Yourself to Death)",
+    excerpt:
+      "The usual advice — flashcards, apps, grammar drills — works but is slow. Here's a more engaging approach that gets you to conversational faster.",
+    date: "2026-03-13",
+    category: "Study Tips",
+    readTime: "9 min read",
+  },
+  {
+    slug: "ordering-food-spanish-central-america",
+    title: "How to Order Food in Spanish in Central America",
+    excerpt:
+      "Walking into a local restaurant and ordering confidently is one of the most satisfying travel experiences. Here's exactly what to say.",
+    date: "2026-03-06",
+    category: "Travel Spanish",
+    readTime: "5 min read",
   },
 ];
 
@@ -72,14 +72,14 @@ export default function BlogPage() {
   return (
     <>
       {/* Header */}
-      <section className="py-20 sm:py-28 bg-gradient-to-b from-primary/5 to-background">
+      <section className="py-20 sm:py-28 bg-gradient-to-b from-primary/5 dark:from-primary/15 to-background">
         <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
           <Badge variant="secondary" className="mb-4">Blog</Badge>
           <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl">
-            Insights for Longevity Clinic Leaders
+            Learn Spanish for Real Travel
           </h1>
           <p className="mx-auto mt-4 max-w-xl text-lg text-muted-foreground">
-            Practical strategies on AI, clinical automation, biomarker optimization, and scaling high-revenue longevity practices.
+            Tips, guides, and insights on travel Spanish, regional dialects, and AI-powered language learning.
           </p>
         </div>
       </section>

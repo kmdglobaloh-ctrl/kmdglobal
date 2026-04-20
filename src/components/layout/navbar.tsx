@@ -4,12 +4,12 @@ import { useState } from "react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { Menu, Dna } from "lucide-react";
+import { Menu, Globe } from "lucide-react";
 import { ThemeToggle } from "@/components/layout/theme-toggle";
 
 const navLinks = [
   { href: "/#products", label: "Products" },
-  { href: "/longevity", label: "Longevity AI" },
+  
   { href: "/contact", label: "Contact" },
 ];
 
@@ -22,7 +22,7 @@ export function Navbar() {
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2 font-semibold text-foreground">
           <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary">
-            <Dna className="h-4 w-4 text-primary-foreground" />
+            <Globe className="h-4 w-4 text-primary-foreground" />
           </div>
           <span className="text-lg font-bold tracking-tight">KMD Global</span>
         </Link>
@@ -43,8 +43,8 @@ export function Navbar() {
         {/* Desktop CTA */}
         <div className="hidden md:flex items-center gap-3">
           <ThemeToggle />
-          <Button size="sm" nativeButton={false} render={<Link href="/longevity/demo" />}>
-            Book a Demo
+          <Button size="sm" nativeButton={false} render={<Link href="/spanish-training" />}>
+            Try Spanish Training
           </Button>
         </div>
 
@@ -71,7 +71,7 @@ export function Navbar() {
                   onClick={() => setOpen(false)}
                 >
                   <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary">
-                    <Dna className="h-4 w-4 text-primary-foreground" />
+                    <Globe className="h-4 w-4 text-primary-foreground" />
                   </div>
                   KMD Global
                 </Link>
@@ -87,8 +87,8 @@ export function Navbar() {
                     </Link>
                   ))}
                 </nav>
-                <Button nativeButton={false} render={<Link href="/longevity/demo" onClick={() => setOpen(false)} />}>
-                  Book a Demo
+                <Button nativeButton={false} render={<Link href="/spanish-training" onClick={() => setOpen(false)} />}>
+                  Try Spanish Training
                 </Button>
               </div>
             </SheetContent>

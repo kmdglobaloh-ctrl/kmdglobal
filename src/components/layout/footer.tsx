@@ -1,17 +1,16 @@
 import Link from "next/link";
-import { Dna } from "lucide-react";
+import { Globe } from "lucide-react";
 import { Separator } from "@/components/ui/separator";
 
 const footerLinks = {
   Products: [
-    { href: "/longevity", label: "Longevity AI" },
-    { href: "/longevity/services", label: "Services" },
-    { href: "/longevity/demo", label: "Book a Demo" },
+    { href: "/spanish-training", label: "Spanish Training" },
+    { href: "/services", label: "Features" },
   ],
   Company: [
+    { href: "/about", label: "About" },
     { href: "/contact", label: "Contact" },
-    { href: "/longevity/about", label: "About" },
-    { href: "/longevity/blog", label: "Blog" },
+    { href: "/blog", label: "Blog" },
   ],
   Legal: [
     { href: "/privacy", label: "Privacy Policy" },
@@ -28,12 +27,12 @@ export function Footer() {
           <div className="flex flex-col gap-4">
             <Link href="/" className="flex items-center gap-2">
               <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary">
-                <Dna className="h-4 w-4 text-primary-foreground" />
+                <Globe className="h-4 w-4 text-primary-foreground" />
               </div>
               <span className="font-bold text-lg">KMD Global</span>
             </Link>
             <p className="text-sm text-muted-foreground leading-relaxed max-w-xs">
-              A tech innovation company building AI-native software products that transform industries.
+              Building focused AI tools for real-world use. Our first product: Spanish Training for travelers.
             </p>
           </div>
 
