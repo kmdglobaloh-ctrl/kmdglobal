@@ -28,7 +28,7 @@ export default function Home() {
             {regions.map((region) => (
               <Link
                 key={region.id}
-                href={`/region/${region.id}`}
+                href={`/spanish-training/region/${region.id}`}
                 className="group bg-white/10 backdrop-blur hover:bg-white/20 transition-all duration-200 rounded-2xl p-6 border border-white/10 hover:border-white/40 hover:scale-[1.02] block"
               >
                 <div className="text-4xl mb-3">{region.emoji}</div>

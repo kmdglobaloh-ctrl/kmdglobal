@@ -19,7 +19,7 @@ export default async function RegionPage({ params }: Props) {
       <div className="max-w-4xl mx-auto px-4 py-10">
         {/* Back + Header */}
         <div className="mb-8">
-          <Link href="/" className="text-green-300 hover:text-white text-sm transition-colors">
+          <Link href="/spanish-training" className="text-green-300 hover:text-white text-sm transition-colors">
             ← Back to regions
           </Link>
           <div className="mt-6 flex items-center gap-4">
@@ -39,7 +39,7 @@ export default async function RegionPage({ params }: Props) {
           {chapters.map((chapter) => (
             <Link
               key={chapter.id}
-              href={`/region/${regionId}/chapter/${chapter.id}`}
+              href={`/spanish-training/region/${regionId}/chapter/${chapter.id}`}
               className="group bg-white/10 backdrop-blur hover:bg-white/20 transition-all duration-200 rounded-2xl p-6 border border-white/10 hover:border-white/30 hover:scale-[1.02]"
             >
               <div className="flex items-start gap-4">

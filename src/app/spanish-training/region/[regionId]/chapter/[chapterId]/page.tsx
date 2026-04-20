@@ -24,9 +24,9 @@ export default async function ChapterPage({ params }: Props) {
       <div className="max-w-3xl mx-auto px-4 py-10">
         {/* Nav */}
         <div className="flex items-center gap-2 text-sm text-green-300 mb-8 flex-wrap">
-          <Link href="/" className="hover:text-white transition-colors">Home</Link>
+          <Link href="/spanish-training" className="hover:text-white transition-colors">Home</Link>
           <span>/</span>
-          <Link href={`/region/${regionId}`} className="hover:text-white transition-colors">{region.name}</Link>
+          <Link href={`/spanish-training/region/${regionId}`} className="hover:text-white transition-colors">{region.name}</Link>
           <span>/</span>
           <span className="text-white">Chapter {chapter.id}</span>
           <div className="ml-auto">
@@ -160,7 +160,7 @@ export default async function ChapterPage({ params }: Props) {
             {chapter.testScenario}
           </p>
           <Link
-            href={`/region/${regionId}/chapter/${chapter.id}/test`}
+            href={`/spanish-training/region/${regionId}/chapter/${chapter.id}/test`}
             className="inline-block bg-green-500 hover:bg-green-400 text-white font-semibold px-8 py-3 rounded-full transition-colors"
           >
             Start Conversation Practice →

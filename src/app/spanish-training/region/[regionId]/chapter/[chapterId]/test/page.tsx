@@ -159,7 +159,7 @@ export default function TestPage({ params }: Props) {
       <div className="bg-black/30 backdrop-blur border-b border-white/10 px-4 py-3">
         <div className="max-w-3xl mx-auto flex items-center gap-3">
           <Link
-            href={`/region/${regionId}/chapter/${chapterId}`}
+            href={`/spanish-training/region/${regionId}/chapter/${chapterId}`}
             className="text-green-300 hover:text-white text-sm transition-colors"
           >
             ← Back to lesson
