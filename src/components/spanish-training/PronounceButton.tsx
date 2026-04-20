@@ -75,6 +75,11 @@ export default function PronounceButton({ text, lang = "es-MX" }: Props) {
     const cleaned = cleanForSpeech(text);
     if (!cleaned) return;
 
+    // Re-attempt voice selection at speak time in case voices weren't ready on mount
+    if (!voiceRef.current) {
+      voiceRef.current = pickVoice(window.speechSynthesis.getVoices());
+    }
+
     const utterance = new SpeechSynthesisUtterance(cleaned);
     utterance.lang = lang;
     utterance.rate = speedRef.current;
@@ -87,6 +92,8 @@ export default function PronounceButton({ text, lang = "es-MX" }: Props) {
     utterance.onend = () => setPlaying(false);
     utterance.onerror = () => setPlaying(false);
 
+    // Chrome on HTTPS can pause speechSynthesis — resume before speaking
+    if (window.speechSynthesis.paused) window.speechSynthesis.resume();
     window.speechSynthesis.speak(utterance);
   }, [text, lang]);
 
