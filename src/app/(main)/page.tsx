@@ -3,7 +3,7 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
-import { ArrowRight, Globe, Zap, BookOpen, ChevronRight, MessageSquare } from "lucide-react";
+import { ArrowRight, Globe, Zap, BookOpen, ChevronRight, MessageSquare, Newspaper } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "KMD Global | AI Products",
@@ -27,6 +27,19 @@ const products = [
     accentBg: "bg-primary/10 dark:bg-primary/15",
   },
   {
+    href: "/local-news",
+    badge: "Live",
+    badgeVariant: "default" as const,
+    icon: Newspaper,
+    name: "Local News",
+    tagline: "Caribbean Coast & Costa Rica — Updated Hourly",
+    description:
+      "Live news feed for travelers and locals in Limón, Costa Rica. Caribbean coast stories highlighted, plus general Costa Rica news from The Tico Times and Q Costa Rica.",
+    cta: "Read News",
+    accent: "text-primary",
+    accentBg: "bg-primary/10 dark:bg-primary/15",
+  },
+  {
     href: "#",
     badge: "Coming Soon",
     badgeVariant: "secondary" as const,
@@ -34,7 +47,7 @@ const products = [
     name: "More Products",
     tagline: "More AI-powered tools in development",
     description:
-      "We're building more focused AI tools across education, productivity, and beyond. Join the waitlist to be notified when they launch.",
+      "We're building more focused AI tools across education, productivity, and beyond. More destinations and features coming soon.",
     cta: "Coming Soon",
     accent: "text-muted-foreground",
     accentBg: "bg-muted/50",
@@ -109,7 +122,7 @@ export default function HomePage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
             {products.map((product) => {
               const Icon = product.icon;
               return (
