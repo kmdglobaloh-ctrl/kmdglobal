@@ -10,7 +10,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://kmdglobal.ai"),
+  metadataBase: new URL("https://kmdglobal.com"),
   title: {
     default: "KMD Global",
     template: "%s | KMD Global",

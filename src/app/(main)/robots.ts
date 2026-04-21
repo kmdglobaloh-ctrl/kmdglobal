@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: "*",
       allow: "/",
     },
-    sitemap: "https://kmdglobal.ai/sitemap.xml",
+    sitemap: "https://kmdglobal.com/sitemap.xml",
   };
 }

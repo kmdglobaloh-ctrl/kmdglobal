@@ -40,7 +40,7 @@ export interface Listing {
 
 // ─── Seed users ──────────────────────────────────────────────────────────────
 
-const adminEmail = process.env.ADMIN_EMAIL ?? "admin@kmdglobal.ai";
+const adminEmail = process.env.ADMIN_EMAIL ?? "admin@kmdglobal.com";
 const adminPassword = process.env.ADMIN_PASSWORD ?? "admin1234";
 
 const users = new Map<string, User>([

@@ -4,7 +4,7 @@ import { Footer } from "@/components/layout/footer";
 import { getSession } from "@/lib/session";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://kmdglobal.ai"),
+  metadataBase: new URL("https://kmdglobal.com"),
   title: {
     default: "KMD Global | AI Products",
     template: "%s | KMD Global",
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://kmdglobal.ai",
+    url: "https://kmdglobal.com",
     siteName: "KMD Global",
     title: "KMD Global | AI Products",
     description:
