@@ -6,15 +6,19 @@ import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Menu, Globe } from "lucide-react";
 import { ThemeToggle } from "@/components/layout/theme-toggle";
+import { SignOutButton } from "@/components/layout/sign-out-button";
+
+interface NavUser { name: string; role: string; }
 
 const navLinks = [
   { href: "/#products", label: "Products" },
   { href: "/local-news", label: "Local News" },
   { href: "/things-to-do", label: "Things To Do" },
+  { href: "/directory", label: "Directory" },
   { href: "/contact", label: "Contact" },
 ];
 
-export function Navbar() {
+export function Navbar({ user }: { user?: NavUser | null }) {
   const [open, setOpen] = useState(false);
 
   return (
@@ -41,12 +45,26 @@ export function Navbar() {
           ))}
         </nav>
 
-        {/* Desktop CTA */}
+        {/* Desktop auth */}
         <div className="hidden md:flex items-center gap-3">
           <ThemeToggle />
-          <Button size="sm" nativeButton={false} render={<Link href="/spanish-training" />}>
-            Try Spanish Training
-          </Button>
+          {user ? (
+            <>
+              <Link href="/dashboard" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
+                {user.name.split(" ")[0]}
+              </Link>
+              <SignOutButton className="inline-flex items-center gap-1.5 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors" />
+            </>
+          ) : (
+            <>
+              <Button size="sm" variant="ghost" nativeButton={false} render={<Link href="/login" />}>
+                Sign In
+              </Button>
+              <Button size="sm" nativeButton={false} render={<Link href="/register" />}>
+                Create Account
+              </Button>
+            </>
+          )}
         </div>
 
         {/* Mobile: theme toggle + menu */}
@@ -88,9 +106,23 @@ export function Navbar() {
                     </Link>
                   ))}
                 </nav>
-                <Button nativeButton={false} render={<Link href="/spanish-training" onClick={() => setOpen(false)} />}>
-                  Try Spanish Training
-                </Button>
+                {user ? (
+                  <div className="flex flex-col gap-3 pt-2 border-t border-border">
+                    <Link href="/dashboard" className="text-sm font-medium text-muted-foreground hover:text-foreground" onClick={() => setOpen(false)}>
+                      Dashboard ({user.name.split(" ")[0]})
+                    </Link>
+                    <SignOutButton className="inline-flex items-center gap-1.5 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors" />
+                  </div>
+                ) : (
+                  <div className="flex flex-col gap-2">
+                    <Button variant="outline" nativeButton={false} render={<Link href="/login" onClick={() => setOpen(false)} />}>
+                      Sign In
+                    </Button>
+                    <Button nativeButton={false} render={<Link href="/register" onClick={() => setOpen(false)} />}>
+                      Create Account
+                    </Button>
+                  </div>
+                )}
               </div>
             </SheetContent>
           </Sheet>
