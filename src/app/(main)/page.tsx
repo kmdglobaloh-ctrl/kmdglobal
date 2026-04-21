@@ -3,7 +3,7 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
-import { ArrowRight, Globe, Zap, BookOpen, ChevronRight, MessageSquare, Newspaper } from "lucide-react";
+import { ArrowRight, Globe, Zap, BookOpen, ChevronRight, MessageSquare, Newspaper, Map } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "KMD Global | AI Products",
@@ -40,14 +40,27 @@ const products = [
     accentBg: "bg-primary/10 dark:bg-primary/15",
   },
   {
+    href: "/things-to-do",
+    badge: "Live",
+    badgeVariant: "default" as const,
+    icon: Map,
+    name: "Things To Do",
+    tagline: "Restaurants, Adventures, Tours & Beaches — Limón, CR",
+    description:
+      "Curated guide to the best experiences on Costa Rica's Caribbean coast. Restaurants, surf spots, wildlife tours, hidden beaches, and more — filtered by category.",
+    cta: "Explore",
+    accent: "text-primary",
+    accentBg: "bg-primary/10 dark:bg-primary/15",
+  },
+  {
     href: "#",
     badge: "Coming Soon",
     badgeVariant: "secondary" as const,
     icon: MessageSquare,
-    name: "More Products",
-    tagline: "More AI-powered tools in development",
+    name: "More Coming",
+    tagline: "More destinations and tools in development",
     description:
-      "We're building more focused AI tools across education, productivity, and beyond. More destinations and features coming soon.",
+      "We're expanding to more travel destinations and building more focused tools. More regions, more features, coming soon.",
     cta: "Coming Soon",
     accent: "text-muted-foreground",
     accentBg: "bg-muted/50",
@@ -122,7 +135,7 @@ export default function HomePage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-4">
             {products.map((product) => {
               const Icon = product.icon;
               return (
