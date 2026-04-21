@@ -41,6 +41,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.75,
     },
     {
+      url: `${baseUrl}/local-news`,
+      lastModified: new Date(),
+      changeFrequency: "hourly",
+      priority: 0.8,
+    },
+    {
       url: `${baseUrl}/blog/learn-spanish-caribbean-coast`,
       lastModified: new Date("2026-04-10"),
       changeFrequency: "monthly",
