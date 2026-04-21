@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
-import { NavbarWrapper } from "@/components/layout/navbar-wrapper";
+import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
+import { getSession } from "@/lib/session";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://kmdglobal.ai"),
@@ -50,14 +51,16 @@ export const metadata: Metadata = {
   },
 };
 
-export default function MainLayout({
+export default async function MainLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  const session = await getSession();
+  const user = session.user ? { name: session.user.name, role: session.user.role } : null;
   return (
     <>
-      <NavbarWrapper />
+      <Navbar user={user} />
       <main className="flex-1">{children}</main>
       <Footer />
     </>
