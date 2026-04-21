@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Navbar } from "@/components/layout/navbar";
+import { NavbarWrapper } from "@/components/layout/navbar-wrapper";
 import { Footer } from "@/components/layout/footer";
 
 export const metadata: Metadata = {
@@ -57,7 +57,7 @@ export default function MainLayout({
 }) {
   return (
     <>
-      <Navbar />
+      <NavbarWrapper />
       <main className="flex-1">{children}</main>
       <Footer />
     </>

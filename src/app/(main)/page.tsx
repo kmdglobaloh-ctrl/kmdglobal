@@ -3,7 +3,7 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
-import { ArrowRight, Globe, Zap, BookOpen, ChevronRight, MessageSquare, Newspaper, Map } from "lucide-react";
+import { ArrowRight, Globe, Zap, BookOpen, ChevronRight, MessageSquare, Newspaper, Map, MapPin } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "KMD Global | AI Products",
@@ -49,6 +49,19 @@ const products = [
     description:
       "Curated guide to the best experiences on Costa Rica's Caribbean coast. Restaurants, surf spots, wildlife tours, hidden beaches, and more — filtered by category.",
     cta: "Explore",
+    accent: "text-primary",
+    accentBg: "bg-primary/10 dark:bg-primary/15",
+  },
+  {
+    href: "/directory",
+    badge: "Live",
+    badgeVariant: "default" as const,
+    icon: MapPin,
+    name: "Business Directory",
+    tagline: "Trusted Local Services — Limón, Costa Rica",
+    description:
+      "Find vetted property managers, handymen, pool techs, cleaners, and more on the Caribbean coast. Contact details visible to registered members.",
+    cta: "Browse Directory",
     accent: "text-primary",
     accentBg: "bg-primary/10 dark:bg-primary/15",
   },
@@ -135,7 +148,7 @@ export default function HomePage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-4">
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
             {products.map((product) => {
               const Icon = product.icon;
               return (
