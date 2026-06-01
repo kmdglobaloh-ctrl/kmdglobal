@@ -88,6 +88,69 @@ export default async function AdminDashboard() {
       <p className="mt-8 text-xs text-muted-foreground bg-amber-500/10 border border-amber-500/20 rounded-lg px-4 py-3">
         ⚠️ Prototype mode — user and note data resets on server restart. Connect a database (Vercel KV, Postgres) for persistence.
       </p>
+
+      {/* Site Proposals & Templates */}
+      <div className="mt-10">
+        <h2 className="text-lg font-bold text-foreground mb-5">🏗️ Client Sites & Templates</h2>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+
+          {/* Templates */}
+          <div className="bg-card border border-border rounded-xl p-5">
+            <div className="flex items-center gap-2 mb-1">
+              <span className="text-xs bg-blue-100 text-blue-700 px-2 py-0.5 rounded-full font-semibold uppercase tracking-wide">Template</span>
+            </div>
+            <h3 className="font-bold text-foreground text-base mt-2 mb-1">🔨 ProHandy Services</h3>
+            <p className="text-muted-foreground text-xs mb-4">Handyman business website template. 8 services, 16 service areas, gallery, reviews, blog, 3-step quote form, mobile CTA bar.</p>
+            <div className="flex gap-2">
+              <Link href="/handyman" target="_blank" className="text-xs bg-primary/10 text-primary font-semibold px-3 py-1.5 rounded-lg hover:bg-primary/20 transition-colors">
+                View Site ↗
+              </Link>
+              <Link href="/handyman/quote" target="_blank" className="text-xs bg-muted text-muted-foreground font-semibold px-3 py-1.5 rounded-lg hover:bg-muted/80 transition-colors">
+                Quote Form ↗
+              </Link>
+            </div>
+          </div>
+
+          {/* Alfieri Brothers — Company Proposal */}
+          <div className="bg-card border-2 border-[#1a237e]/30 rounded-xl p-5 relative overflow-hidden">
+            <div className="absolute top-0 right-0 w-24 h-24 bg-[#1a237e]/5 rounded-full -translate-y-8 translate-x-8" />
+            <div className="flex items-center gap-2 mb-1">
+              <span className="text-xs bg-green-100 text-green-700 px-2 py-0.5 rounded-full font-semibold uppercase tracking-wide">Company Proposal</span>
+              <span className="text-xs bg-amber-100 text-amber-700 px-2 py-0.5 rounded-full font-semibold uppercase tracking-wide">🔒 Unlisted</span>
+            </div>
+            <h3 className="font-bold text-foreground text-base mt-2 mb-1">🏗️ Alfieri Brothers Contracting</h3>
+            <p className="text-muted-foreground text-xs mb-3">Cleveland, OH excavation & contracting. 11 service pages, admin CRM, email campaigns, AI assistant, lead monitor.</p>
+
+            {/* Pricing tiers */}
+            <div className="grid grid-cols-3 gap-2 mb-4">
+              {[
+                { tier: "Standard", price: "$3,500", mo: "$175/mo", color: "bg-slate-50 border-slate-200" },
+                { tier: "Professional", price: "$5,000", mo: "$275/mo", color: "bg-blue-50 border-blue-200", recommended: true },
+                { tier: "Premium", price: "$7,000", mo: "$450/mo", color: "bg-purple-50 border-purple-200" },
+              ].map((p) => (
+                <div key={p.tier} className={`border rounded-lg p-2.5 text-center ${p.color} relative`}>
+                  {p.recommended && <span className="absolute -top-2 left-1/2 -translate-x-1/2 text-[10px] bg-[#1a237e] text-white px-1.5 py-0.5 rounded-full font-bold whitespace-nowrap">Recommended</span>}
+                  <p className="text-xs text-gray-500 font-medium mt-1">{p.tier}</p>
+                  <p className="font-black text-[#0d1444] text-sm">{p.price}</p>
+                  <p className="text-[10px] text-gray-500">{p.mo}</p>
+                </div>
+              ))}
+            </div>
+
+            <div className="flex gap-2 flex-wrap">
+              <Link href="/alfieri" target="_blank" className="text-xs bg-[#1a237e] text-white font-semibold px-3 py-1.5 rounded-lg hover:bg-blue-900 transition-colors">
+                Preview Site ↗
+              </Link>
+              <Link href="/alfieri/admin/login" target="_blank" className="text-xs bg-[#cc2222] text-white font-semibold px-3 py-1.5 rounded-lg hover:bg-red-700 transition-colors">
+                Admin Portal ↗
+              </Link>
+              <Link href="/admin/proposals/alfieri" className="text-xs bg-muted text-muted-foreground font-semibold px-3 py-1.5 rounded-lg hover:bg-muted/80 transition-colors">
+                Full Proposal →
+              </Link>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
