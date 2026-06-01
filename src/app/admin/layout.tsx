@@ -1,7 +1,8 @@
 import Link from "next/link";
 import { redirect } from "next/navigation";
 import { getSession } from "@/lib/session";
-import { LayoutDashboard, Users, StickyNote, MapPin, Globe, LogOut } from "lucide-react";
+import { LayoutDashboard, Users, StickyNote, MapPin, Globe } from "lucide-react";
+import { SignOutButton } from "@/components/admin/sign-out-button";
 
 const navItems = [
   { href: "/admin", label: "Dashboard", icon: LayoutDashboard, exact: true },
@@ -43,20 +44,7 @@ export default async function AdminLayout({ children }: { children: React.ReactN
         </nav>
         <div className="p-3 border-t border-border">
           <div className="px-3 py-2 text-xs text-muted-foreground mb-1">{session.user.email}</div>
-          <form action="/api/auth/logout" method="POST">
-            <button
-              type="submit"
-              onClick={async (e) => {
-                e.preventDefault();
-                await fetch("/api/auth/logout", { method: "POST" });
-                window.location.href = "/login";
-              }}
-              className="flex items-center gap-2.5 px-3 py-2 rounded-lg text-sm text-muted-foreground hover:text-foreground hover:bg-muted transition-colors w-full text-left"
-            >
-              <LogOut className="h-4 w-4" />
-              Sign Out
-            </button>
-          </form>
+          <SignOutButton />
         </div>
       </aside>
 
