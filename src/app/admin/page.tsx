@@ -111,6 +111,35 @@ export default async function AdminDashboard() {
             </div>
           </div>
 
+          {/* Trades Template */}
+          <div className="bg-card border-2 border-[#1a3a5c]/30 rounded-xl p-5 relative overflow-hidden">
+            <div className="absolute top-0 right-0 w-24 h-24 bg-[#1a3a5c]/5 rounded-full -translate-y-8 translate-x-8" />
+            <div className="flex items-center gap-2 mb-1">
+              <span className="text-xs bg-orange-100 text-orange-700 px-2 py-0.5 rounded-full font-semibold uppercase tracking-wide">Template</span>
+              <span className="text-xs bg-amber-100 text-amber-700 px-2 py-0.5 rounded-full font-semibold uppercase tracking-wide">Multi-Trade</span>
+            </div>
+            <h3 className="font-bold text-foreground text-base mt-2 mb-1">🔧 ProTrades Template</h3>
+            <p className="text-muted-foreground text-xs mb-3">Config-driven template for any trade business — contractor, plumber, roofer, HVAC, electrician. Includes CRM, project tracker, customer portal, reports, and AI assistant.</p>
+            <div className="grid grid-cols-2 gap-2 mb-4 text-xs">
+              {["Customer Project Portal", "Job Management CRM", "Email Campaigns", "AI Assistant", "Revenue Reports", "Feature Flags"].map((f) => (
+                <div key={f} className="flex items-center gap-1.5 text-gray-600">
+                  <span className="text-green-600 font-bold">✓</span> {f}
+                </div>
+              ))}
+            </div>
+            <div className="flex gap-2 flex-wrap">
+              <Link href="/trades" target="_blank" className="text-xs bg-[#1a3a5c] text-white font-semibold px-3 py-1.5 rounded-lg hover:opacity-90 transition-opacity">
+                Preview Site ↗
+              </Link>
+              <Link href="/trades/admin/login" target="_blank" className="text-xs bg-[#e85d04] text-white font-semibold px-3 py-1.5 rounded-lg hover:opacity-90 transition-opacity">
+                Admin Demo ↗
+              </Link>
+              <Link href="/trades/admin/proposal" target="_blank" className="text-xs bg-muted text-muted-foreground font-semibold px-3 py-1.5 rounded-lg hover:bg-muted/80 transition-colors">
+                Proposal →
+              </Link>
+            </div>
+          </div>
+
           {/* Alfieri Brothers — Company Proposal */}
           <div className="bg-card border-2 border-[#1a237e]/30 rounded-xl p-5 relative overflow-hidden">
             <div className="absolute top-0 right-0 w-24 h-24 bg-[#1a237e]/5 rounded-full -translate-y-8 translate-x-8" />
