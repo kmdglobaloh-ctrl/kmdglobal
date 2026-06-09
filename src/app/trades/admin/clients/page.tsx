@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect, useCallback } from "react";
-import { TRADES_DEMO_CONFIG, type TradeClient } from "@/lib/trades/data";
+import { TRADES_DEMO_CONFIG, SAMPLE_CLIENTS, type TradeClient } from "@/lib/trades/data";
 
 const config = TRADES_DEMO_CONFIG;
 const CLIENTS_KEY = "trades_clients";
@@ -24,7 +24,7 @@ const EMPTY: FormData = {
 };
 
 export default function TradesClientsPage() {
-  const [clients, setClients] = useState<TradeClient[]>([]);
+  const [clients, setClients] = useState<TradeClient[]>(SAMPLE_CLIENTS);
   const [search, setSearch] = useState("");
   const [filterStatus, setFilterStatus] = useState<string>("all");
   const [showForm, setShowForm] = useState(false);

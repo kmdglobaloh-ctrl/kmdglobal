@@ -2,14 +2,14 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { TRADES_DEMO_CONFIG, SAMPLE_PROJECTS, type TradeClient, type TradeProject } from "@/lib/trades/data";
+import { TRADES_DEMO_CONFIG, SAMPLE_CLIENTS, SAMPLE_PROJECTS, type TradeClient, type TradeProject } from "@/lib/trades/data";
 
 const config = TRADES_DEMO_CONFIG;
 const CLIENTS_KEY = "trades_clients";
 const PROJECTS_KEY = "trades_projects";
 
 export default function TradesAdminDashboard() {
-  const [clients, setClients] = useState<TradeClient[]>([]);
+  const [clients, setClients] = useState<TradeClient[]>(SAMPLE_CLIENTS);
   const [projects, setProjects] = useState<TradeProject[]>(SAMPLE_PROJECTS);
 
   useEffect(() => {

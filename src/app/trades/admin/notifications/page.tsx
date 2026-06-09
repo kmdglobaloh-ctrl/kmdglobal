@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { TRADES_DEMO_CONFIG, type TradeClient } from "@/lib/trades/data";
+import { TRADES_DEMO_CONFIG, SAMPLE_CLIENTS, type TradeClient } from "@/lib/trades/data";
 
 const config = TRADES_DEMO_CONFIG;
 const CLIENTS_KEY = "trades_clients";
@@ -99,7 +99,7 @@ export default function TradesNotificationsPage() {
   useEffect(() => {
     try {
       const stored = localStorage.getItem(CLIENTS_KEY);
-      const clients: TradeClient[] = stored ? JSON.parse(stored) : [];
+      const clients: TradeClient[] = stored ? JSON.parse(stored) : SAMPLE_CLIENTS;
       const built = buildQueue(clients);
 
       const savedPrefs = localStorage.getItem(PREFS_KEY);

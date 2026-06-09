@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect, useMemo } from "react";
-import { TRADES_DEMO_CONFIG, SAMPLE_PROJECTS, type TradeClient, type TradeProject } from "@/lib/trades/data";
+import { TRADES_DEMO_CONFIG, SAMPLE_CLIENTS, SAMPLE_PROJECTS, type TradeClient, type TradeProject } from "@/lib/trades/data";
 
 const config = TRADES_DEMO_CONFIG;
 const CLIENTS_KEY = "trades_clients";
@@ -37,7 +37,7 @@ function BarRow({ label, value, max, color, suffix = "" }: { label: string; valu
 }
 
 export default function TradesReportsPage() {
-  const [clients, setClients] = useState<TradeClient[]>([]);
+  const [clients, setClients] = useState<TradeClient[]>(SAMPLE_CLIENTS);
   const [projects, setProjects] = useState<TradeProject[]>(SAMPLE_PROJECTS);
   const [range, setRange] = useState<DateRange>("365");
 

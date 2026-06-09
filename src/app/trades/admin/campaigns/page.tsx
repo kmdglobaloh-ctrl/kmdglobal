@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { TRADES_DEMO_CONFIG, type TradeClient } from "@/lib/trades/data";
+import { TRADES_DEMO_CONFIG, SAMPLE_CLIENTS, type TradeClient } from "@/lib/trades/data";
 
 const config = TRADES_DEMO_CONFIG;
 const CLIENTS_KEY = "trades_clients";
@@ -59,7 +59,7 @@ function buildTemplate(type: CampaignType, client: { name: string; service?: str
 }
 
 export default function TradesCampaignsPage() {
-  const [clients, setClients] = useState<TradeClient[]>([]);
+  const [clients, setClients] = useState<TradeClient[]>(SAMPLE_CLIENTS);
   const [selectedType, setSelectedType] = useState<CampaignType>("post-project");
   const [selectedClients, setSelectedClients] = useState<string[]>([]);
   const [previewClient, setPreviewClient] = useState<TradeClient | null>(null);
